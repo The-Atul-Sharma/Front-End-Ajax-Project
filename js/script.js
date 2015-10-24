@@ -23,7 +23,7 @@ function loadData() {
 
     $body.append('<img class="bgimg" src="'+streetview+'">');
 
-    $.getJSON("http://api.nytimes.com/svc/search/v2/articlesearch.json?q="+cityMap+"&sort=newest&api-key=1eed83813671b0618396a8f0670c5e70%3A18%3A73285246", function(data){
+    $.getJSON("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+cityMap+"&sort=newest&api-key=1eed83813671b0618396a8f0670c5e70%3A18%3A73285246", function(data){
         $nytHeaderElem.text('NYTimes article about '+cityMap);
         for(var i = 0;i<data.response.docs.length;i++){
         $nytElem.append('<li><a href="'+data.response.docs[i].web_url+
@@ -40,7 +40,7 @@ function loadData() {
     }, 8000);
 
     $.ajax({
-        url: 'http://en.wikipedia.org/w/api.php?action=opensearch&search='+ cityMap + '&format=json&callback=wikiCallback',
+        url: 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+ cityMap + '&format=json&callback=wikiCallback',
         dataType: "jsonp",
         success: function(response){
             for(var i = 0;i<response[1].length;i++){
