@@ -1,4 +1,4 @@
-
+//Add Nytimes and Wikipedia Api  
 function loadData() {
 
     var $body = $('body');
